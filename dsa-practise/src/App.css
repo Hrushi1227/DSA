@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  margin-top: 20px; /* Add margin to separate from the top */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  height: calc(100vh - 80px); /* Adjust height to fill most of the viewport */
+}
+
+.editor {
+  flex: 1; /* Give more space to the editor */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.output {
+  flex: 1; /* Give more space to the output */
+  margin: 10px;
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+.output-title {
+  padding: 10px;
+  background-color: #e9ecef; /* Lighter gray for title background */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid #ccc; /* Border bottom for separation */
+}
+
+.output-content {
+  padding: 10px;
+  overflow: auto; /* Add scroll bar if content exceeds height */
+  height: calc(100% - 40px); /* Adjust height for content area minus title */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  margin-top: 10px;
+  align-self: flex-start; /* Align button to the left */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+pre {
+  background-color: #fff; /* White background for code */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  overflow: auto;
+  height: 100%; /* Use the full height of the container */
+}
+
+.CodeMirror {
+  flex: 1;
+  height: 100%; /* Use the full height of the container */
+}
