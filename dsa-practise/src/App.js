@@ -5,9 +5,7 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import "./App.css";
 
 function App() {
-  const [code, setCode] = useState(
-    '// Write your JavaScript code here\nconsole.log("Hello, World!");'
-  );
+  const [code, setCode] = useState("// Write your JavaScript code here");
   const [output, setOutput] = useState("");
 
   const runCode = () => {
