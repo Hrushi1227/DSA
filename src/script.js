@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const functionSelect = document.getElementById("functionSelect");
   const arrayDisplay = document.getElementById("arrayDisplay");
 
-  // Function Input
+  // ------------------ Function Input ----------------------
   const array = [1, 2, 4, 6, 1, 2, 5];
   // ------------------ Function List ----------------------
   const functionsMap = {
@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     secondLargestNumber: secondLargestNum,
     secondSmallestNumber: secondSmallestNumber,
     removeDuplicate: removeDuplicate,
+    leftRotateByOne: leftRotateByOne,
+    rotateByDNumber: rotateByDNumber,
   };
 
   displayArray(array);
@@ -42,10 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function checkIsArraySorted(data) {
-    console.info("data is", data);
     for (let i = 1; i < data.length; i++) {
       if (data[i] > data[i - 1]) {
-        console.log("Check Values", data[i], data[i - 1]);
+        console.info("Check Values", data[i], data[i - 1]);
       } else {
         return false;
       }
@@ -65,14 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
         secLargest = a[i];
       }
     }
-    console.log("Second Largest Element is ", secLargest);
     return secLargest;
   }
 
   function secondSmallestNumber(data) {
     let smallest = data[0];
     let secSmallest = 100;
-    console.log("Before Sort", smallest, secSmallest);
 
     for (i = 0; i < data.length; i++) {
       if (smallest > data[i]) {
@@ -82,38 +81,60 @@ document.addEventListener("DOMContentLoaded", function () {
         secSmallest = data[i];
       }
     }
-    console.log("SMAllest 1 and 2 Num is", smallest, secSmallest);
     return secSmallest;
   }
 
   function removeDuplicate(arr) {
-    console.log("Duplicate", arr);
     if (arr.length <= 1) {
       return arr;
     }
     arr.sort((a, b) => a - b);
-    console.log("Sorted Arraya is ", arr);
-
+    console.info("Sorted Arraya is", arr);
     let j = 0;
-
     for (let i = 1; i < arr.length; i++) {
       if (arr[i] != arr[j]) {
         j++;
         arr[j] = arr[i];
       }
     }
-    console.log(arr.slice(0, j + 1));
-
     // without Slice method truncate length of genrated array
     // Step 4: Truncate the original array to remove duplicates
     // arr.length = j + 1;
     // Step 5: Return the modified array (not necessary in this case, but for clarity)
     // return arr;
-
     return arr.slice(0, j + 1);
   }
 
+  function leftRotateByOne(arr) {
+    temp = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      arr[i - 1] = arr[i];
+    }
+    arr[arr.length - 1] = temp;
+    return arr;
+  }
+
+  function rotateByDNumber(arr) {
+    let d = 3;
+    let temp = [d];
+    for (let j = 0; j < d; j++) {
+      temp[j] = arr[j];
+    }
+    console.log("Check", temp);
+    for (i = d; i < arr.length; i++) {
+      arr[i - d] = arr[i];
+    }
+    console.log("New Value of Array", arr);
+    for (let i = arr.length - d; i < arr.length; i++) {
+      console.log("Array Index value", arr.length - d);
+      arr[i] = temp[i - (arr.length - d)];
+    }
+    console.log("Pending Element of Array", arr);
+    return arr;
+  }
+
   // -------------XXXXXXXXXXX-----------------------
+  // ------------------END of Function List ----------------------
 
   function displayArray(arr) {
     arrayDisplay.textContent = arr.join(", ");
