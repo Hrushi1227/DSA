@@ -46,7 +46,7 @@ export function secondSmallestNumber(data) {
     if (smallest > data[i]) {
       secSmallest = smallest;
       smallest = data[i];
-    } else if (data[i] != smallest && data[i] < secSmallest) {
+    } else if (data[i] !== smallest && data[i] < secSmallest) {
       secSmallest = data[i];
     }
   }
@@ -61,7 +61,7 @@ export function removeDuplicate(arr) {
   console.info("Sorted Arraya is", arr);
   let j = 0;
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] != arr[j]) {
+    if (arr[i] !== arr[j]) {
       j++;
       arr[j] = arr[i];
     }
@@ -121,12 +121,28 @@ export function moveZerosToEnd(arr) {
 export function findTotalCountOfFactor(arr) {
   //   n = 10;
   let count = 0;
-  for (let i = 0; i <= arr; i++) {
-    if (arr % i == 0) {
+  for (let i = 0; i * i <= arr; i++) {
+    if (arr % i === 0) {
+      if (arr / i === i) {
+        count += 1;
+      } else {
+        count += 2;
+      }
       console.log("factors are ", i);
-      count++;
     }
   }
   console.log("Total Factor are ", count);
   return count;
+}
+
+export function primeNumberOrNot(arr) {
+  if (arr === 1) {
+    return 0;
+  }
+  for (let i = 2; i * i <= arr; i++) {
+    if (arr % i === 0) {
+      return 0;
+    }
+  }
+  return 1;
 }

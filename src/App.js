@@ -10,6 +10,7 @@ import {
   rotateByDNumber,
   moveZerosToEnd,
   findTotalCountOfFactor,
+  primeNumberOrNot,
 } from "./utils/dsaFunction";
 
 const functionsMap = {
@@ -23,6 +24,7 @@ const functionsMap = {
   rotateByDNumber: rotateByDNumber,
   moveZerosToEnd: moveZerosToEnd,
   findTotalCountOfFactor: findTotalCountOfFactor,
+  primeNumberOrNot: primeNumberOrNot,
 };
 
 function App() {
