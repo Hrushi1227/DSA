@@ -1,57 +1,32 @@
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #e0f7fa; /* Light cyan background */
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .container {
-  background-color: #ffffff; /* White background */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px 40px;
-  max-width: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
 
-h1 {
-  color: #00796b; /* Teal color */
-  margin-bottom: 20px;
-}
-
-.array-display {
-  margin-bottom: 20px;
-}
-
-.array-display label {
-  font-weight: bold;
-  color: #00796b; /* Teal color */
-}
-
-.array-display p {
-  background-color: #e0f2f1; /* Light teal background */
-  border: 1px solid #00796b; /* Teal border */
-  color: #00796b; /* Teal text */
-  padding: 10px;
-  border-radius: 5px;
-}
-
+.array-input,
 .controls {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 label {
-  font-weight: bold;
-  color: #00796b; /* Teal color */
+  display: block;
+  margin-bottom: 10px;
 }
 
-select,
-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  margin-top: 10px;
+input,
+select {
+  width: 100%;
+  padding: 10px;
   margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+#output {
+  margin-top: 20px;
+  font-weight: bold;
 }
